@@ -21,14 +21,14 @@
       "viewsContainers": {
     "activitybar": [
       {
-        "id": "javaSecScanner",
+        "id": "scannerView",
         "title": "Security Scan",
         "icon": "media/shield.svg"
       }
     ]
   },
   "views": {
-    "javaSecScanner": [
+    "scannerView": [
       {
         "id": "scannerView",
         "name": "Java Vulnerabilities"

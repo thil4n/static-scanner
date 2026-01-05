@@ -1,22 +1,15 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
+import { ScannerViewProvider } from "./scannerView";
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Static Scanner activated');
+  const provider = new ScannerViewProvider(context);
 
+  context.subscriptions.push(
+    vscode.window.registerWebviewViewProvider(
+      "scannerView",
+      provider
+    )
+  );
 
-	vscode.window.showInformationMessage(
-  'Static Scanner Activated'
-);
-
-
-	const disposable = vscode.commands.registerCommand(
-		'static-scanner.helloWorld',
-		() => {
-			vscode.window.showInformationMessage('Hello World from Static Scanner!');
-		}
-	);
-
-	context.subscriptions.push(disposable);
+  vscode.window.onDidChangeActiveTextEditor(() => {});
 }
-
-export function deactivate() {}
