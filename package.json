@@ -27,14 +27,17 @@
       }
     ]
   },
-  "views": {
-    "scannerView": [
-      {
-        "id": "scannerView",
-        "name": "Java Vulnerabilities"
-      }
-    ]
-  }
+"views": {
+  "scannerView": [
+    {
+      "id": "scannerView",
+      "name": "Java Vulnerabilities",
+      "type": "webview"
+
+    }
+  ]
+}
+
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

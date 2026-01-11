@@ -1,22 +1,19 @@
-export const RULES: Record<string, { label: string; regex: string }> = {
-  IDOR: {
-    label: "IDOR (Direct Object Reference)",
-    regex: "@PathVariable|@RequestParam"
+export const RULES: Record<string, any> = {
+  sqli: {
+    title: "SQL Injection",
+    severity: "HIGH",
+    regex: "(Statement|PreparedStatement).*execute(Query|Update)"
   },
-  SQLI: {
-    label: "SQL Injection",
-    regex: "(SELECT|UPDATE|DELETE|INSERT).*\\+"
+  xss: {
+    title: "Cross-Site Scripting",
+    severity: "MEDIUM",
+    regex: "innerHTML|document.write"
   },
-  RCE: {
-    label: "Remote Code Execution",
-    regex: "Runtime\\.getRuntime\\(\\)\\.exec|ProcessBuilder"
-  },
-  XXE: {
-    label: "XML External Entity",
-    regex: "DocumentBuilderFactory\\.newInstance|SAXParserFactory\\.newInstance"
-  },
-  DESERIALIZATION: {
-    label: "Unsafe Deserialization",
-    regex: "ObjectInputStream|readObject"
+  rce: {
+    title: "Remote Code Execution",
+    severity: "CRITICAL",
+    regex: "Runtime\\.getRuntime\\(\\)\\.exec"
   }
 };
+
+
