@@ -1,0 +1,158 @@
+:root {
+  --border: var(--vscode-panel-border);
+  --card-bg: var(--vscode-sideBar-background);
+  --muted: var(--vscode-descriptionForeground);
+  --accent: var(--vscode-textLink-foreground);
+}
+
+body {
+  font-family: var(--vscode-font-family);
+  font-size: 13px;
+  background: var(--vscode-editor-background);
+  color: var(--vscode-foreground);
+  padding: 12px;
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* Language pills */
+.lang-group {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.lang-option {
+  flex: 1;
+  text-align: center;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+}
+
+.lang-option.active {
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+  border-color: var(--vscode-button-background);
+}
+
+.lang-option input {
+  display: none;
+}
+
+/* Checkboxes */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--vscode-button-background);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    var(--vscode-button-background),
+    var(--vscode-button-hoverBackground)
+  );
+  color: var(--vscode-button-foreground);
+}
+
+button:hover {
+  filter: brightness(1.05);
+}
+
+/* Results */
+.result {
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.result {
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  margin-bottom: 6px;
+}
+
+.file-group {
+  border-top: 1px solid var(--border);
+  margin-top: 10px;
+  padding-top: 8px;
+}
+
+.file-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.file-path {
+  flex: 1;
+  min-width: 0;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  color: var(--vscode-textLink-foreground);
+}
+
+.file-count {
+  background: var(--vscode-badge-background);
+  color: var(--vscode-badge-foreground);
+  border-radius: 10px;
+  padding: 2px 6px;
+  font-size: 11px;
+  margin-left: 6px;
+}
+
+/* tighten result under file */
+.file-group .result {
+  margin-left: 8px;
+}
+
+
+.result:hover {
+  background: var(--vscode-list-hoverBackground);
+}
+
+
+.sev-CRITICAL { color: #ff5555; }
+.sev-HIGH { color: #ff8800; }
+.sev-MEDIUM { color: #ffaa00; }
+.sev-LOW { color: #55aa55; }

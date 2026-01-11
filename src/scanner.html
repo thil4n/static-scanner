@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'none';
+      style-src {{cspSource}};
+      script-src 'nonce-{{nonce}}';
+    "
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="{{styleUri}}" />
+</head>
+
+<body>
+  <div class="card">
+    <div class="section-title">Language</div>
+    <div class="lang-group">
+      <label class="lang-option active">
+        <input type="radio" name="language" value="java" checked /> Java
+      </label>
+      <label class="lang-option">
+        <input type="radio" name="language" value="javascript" /> JavaScript
+      </label>
+      <label class="lang-option">
+        <input type="radio" name="language" value="php" /> PHP
+      </label>
+    </div>
+
+    <div class="section-title">Vulnerabilities</div>
+    <label class="option"><input type="checkbox" value="sqli" checked /> SQL Injection</label>
+    <label class="option"><input type="checkbox" value="xss" /> XSS</label>
+    <label class="option"><input type="checkbox" value="rce" /> RCE</label>
+    <label class="option"><input type="checkbox" value="cmdi" /> Command Injection</label>
+    <label class="option"><input type="checkbox" value="ssrf" /> SSRF</label>
+    <label class="option"><input type="checkbox" value="lfi" /> LFI</label>
+    <label class="option"><input type="checkbox" value="rfi" /> RFI</label>
+    <label class="option"><input type="checkbox" value="xxe" /> XXE</label>
+    <label class="option"><input type="checkbox" value="deserialize" /> Deserialization</label>
+
+    <button id="scanBtn">Scan Workspace</button>
+
+    <div id="results"></div>
+  </div>
+
+  <script nonce="{{nonce}}" src="{{scriptUri}}"></script>
+</body>
+</html>
